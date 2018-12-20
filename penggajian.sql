@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 20 Des 2018 pada 11.52
+-- Waktu pembuatan: 20 Des 2018 pada 12.10
 -- Versi server: 5.6.38
 -- Versi PHP: 7.2.1
 
@@ -40,3 +40,92 @@ INSERT INTO `gaji` (`id_karyawan`, `jam_kerja`, `uang_perjam`, `potongan`, `kete
 ('K001', 200, 500000, 0, ''),
 ('K001', 200, 500000, 800000, 'Absen 12 Hari'),
 ('K003', 206, 800000, 500000, 'Absen 10 hari');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `jabatan`
+--
+
+CREATE TABLE `jabatan` (
+  `id_jabatan` int(11) NOT NULL,
+  `nama_jabatan` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `jabatan`
+--
+
+INSERT INTO `jabatan` (`id_jabatan`, `nama_jabatan`) VALUES
+(1, 'IT Support Officer'),
+(2, 'Network Administrator'),
+(3, 'Network Engineer'),
+(4, 'IT Programmer'),
+(5, 'Project Manager');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `karyawan`
+--
+
+CREATE TABLE `karyawan` (
+  `id_karyawan` varchar(11) NOT NULL,
+  `nama` varchar(30) NOT NULL,
+  `TTL` varchar(25) NOT NULL,
+  `jabatan` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `karyawan`
+--
+
+INSERT INTO `karyawan` (`id_karyawan`, `nama`, `TTL`, `jabatan`) VALUES
+('K001', 'Siti Nor C', 'Surabaya, 11 Maret 1986', 2),
+('K002', 'M Lourentius', 'Malang, 30 Desember 1977', 2),
+('K003', 'J Kambing Hitam', 'Sawahan, 30 Februari 2020', 3),
+('K004', 'Noor Ali', 'Malang, 26 Januari 1998', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `manager`
+--
+
+CREATE TABLE `manager` (
+  `id_manager` varchar(11) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `nama` varchar(30) NOT NULL,
+  `alamat` text NOT NULL,
+  `jabatan` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `manager`
+--
+
+INSERT INTO `manager` (`id_manager`, `password`, `nama`, `alamat`, `jabatan`) VALUES
+('M001', 'a123', 'Mark Zuckerberg', 'Jln California', 5),
+('M002', 'd123', 'Bill Gates', 'Jln Surabaya', 5);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `jabatan`
+--
+ALTER TABLE `jabatan`
+  ADD PRIMARY KEY (`id_jabatan`);
+
+--
+-- Indeks untuk tabel `karyawan`
+--
+ALTER TABLE `karyawan`
+  ADD PRIMARY KEY (`id_karyawan`);
+
+--
+-- Indeks untuk tabel `manager`
+--
+ALTER TABLE `manager`
+  ADD PRIMARY KEY (`id_manager`);
