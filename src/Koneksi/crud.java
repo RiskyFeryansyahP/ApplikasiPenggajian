@@ -57,4 +57,20 @@ public class crud extends koneksi{
         }
     }
     
+    public void add(String nama_table, String data1, String data2, String data3, String data4, Connection conn) {
+        String query = "INSERT INTO "+nama_table+" VALUES(?,?,?,?)";
+        
+        try {
+            PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setString(1, data1);
+            stmt.setString(2, data2);
+            stmt.setString(3, data3);
+            stmt.setString(4, data4);
+            stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Berhasil Menambahkan Data Karyawan");
+        } catch (Exception e) {
+            System.out.println("Error : " + e);
+        }
+    }
+    
 }

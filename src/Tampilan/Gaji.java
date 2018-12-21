@@ -42,6 +42,7 @@ public class Gaji extends javax.swing.JFrame {
     
     public Gaji() {
         initComponents();
+        setExtendedState(Gaji.MAXIMIZED_BOTH);
         datatabelGaji();
     }
 

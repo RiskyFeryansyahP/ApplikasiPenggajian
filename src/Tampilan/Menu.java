@@ -16,6 +16,7 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        setExtendedState(Menu.MAXIMIZED_BOTH);
     }
 
     /**
@@ -66,13 +67,10 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(ButtonEXIT, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(ButtonPenggajian, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(ButtonDataPenggajian, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(274, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ButtonEXIT)
-                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,9 +81,9 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(ButtonPenggajian)
                 .addGap(18, 18, 18)
                 .addComponent(ButtonDataPenggajian)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(ButtonEXIT)
-                .addContainerGap())
+                .addContainerGap(139, Short.MAX_VALUE))
         );
 
         pack();
