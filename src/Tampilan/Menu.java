@@ -14,6 +14,9 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
+    
+    public static String pilihan = "";
+    
     public Menu() {
         initComponents();
         setExtendedState(Menu.MAXIMIZED_BOTH);
@@ -95,13 +98,15 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonEXITActionPerformed
 
     private void ButtonPenggajianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPenggajianActionPerformed
-        new Gaji().setVisible(true);
+        pilihan = "Penggajian";
+        new Login().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_ButtonPenggajianActionPerformed
 
     private void ButtonDataPenggajianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDataPenggajianActionPerformed
         // TODO add your handling code here:
-        new datakaryawan().setVisible(true);
+        pilihan="Data";
+        new Login().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_ButtonDataPenggajianActionPerformed
 
@@ -136,7 +141,7 @@ public class Menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-            new Login().setVisible(true);
+            new Menu().setVisible(true);
             }
         });
     }
