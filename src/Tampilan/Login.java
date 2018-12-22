@@ -40,6 +40,7 @@ public Connection conn = new koneksi().connect();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAutoRequestFocus(false);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ID            :");
@@ -129,8 +130,16 @@ public Connection conn = new koneksi().connect();
                     if(hasil.getString("password").equals(password))
                     {
                         //JOptionPane.showMessageDialog(null, "DATA DITEMUKAN");
-                        new Menu().setVisible(true);
-                        this.setVisible(false);
+                        if(Menu.pilihan.equals("Penggajian"))
+                        {
+                            new Gaji().setVisible(true);
+                            this.setVisible(false);
+                        }
+                        else if(Menu.pilihan.equals("Data"))
+                        {
+                            new datakaryawan().setVisible(true);
+                            this.setVisible(false);
+                        }
                     }
                     else
                     {
